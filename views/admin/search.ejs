@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Bootstrap Admin Dashboard</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Add your custom CSS styles here */
+    /* Example: 
+    .custom-class {
+      property: value;
+    }
+    */
+  </style>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="container-fluid">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <a class="navbar-brand" href="/admin/">Admin</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <a class="nav-link" href="/admin/">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+            <a class="nav-link" href="/admin/update">
+              <i class="fa fa-fw fa-area-chart"></i>
+              <span class="nav-link-text">Update</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+            <a class="nav-link" href="/admin/addhotel">
+              <i class="fa fa-fw fa-table"></i>
+              <span class="nav-link-text">Add Data</span>
+            </a>
+          </li>
+          <!-- Add a dropdown menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              More Pages
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Page 1</a>
+              <a class="dropdown-item" href="#">Page 2</a>
+              <a class="dropdown-item" href="#">Page 3</a>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/logout" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+      <div class="container">
+        <!-- Display a message -->
+        <% if(msg) { %>
+        <h3 style="color: #17b978;" class="text-center"><%=msg%></h3><br>
+        <% } %>
+
+        <!-- Searching By Category -->
+        <div class="card mb-3">
+          <div class="card-header text-center">
+            <h2 class="text-center">Searching By Category</h2>
+            <form action="/admin/search" method="POST">
+              <input type="text" name="cat" class="form-control" placeholder="Category">
+              <button type="submit" class="btn btn-success btn-block mt-3">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-dark">
+      <div class="container">
+        <div class="text-center">
+          <small>2022 Hotel Management System. All Rights Reserved.</small>
+          <!-- Add social media icons or links here -->
+          <!-- Example: 
+          <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+          -->
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- /.container-fluid -->
+
+  <!-- Scroll to Top Button -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+  <script>
+    // Add your custom JavaScript here
+    // Example:
+    // $(document).ready(function() {
+    //   // Your code here
+    // });
+  </script>
+</body>
+
+</html>

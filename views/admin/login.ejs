@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin: Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #ebebeb;
+    }
+
+    .login-box {
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    .login-key {
+      font-size: 40px;
+      color: #007bff;
+      margin-bottom: 30px;
+    }
+
+    .login-title {
+      font-size: 25px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #007bff;
+    }
+
+    .login-form .form-control {
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      border: 1px solid #ced4da;
+      color: #555555;
+    }
+
+    .login-form .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .login-button {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .login-button button {
+      width: 150px;
+      border-radius: 30px;
+      background-color: #007bff;
+      border-color: #007bff;
+      color: #ffffff;
+    }
+
+    .login-button button:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    .login-btm {
+      text-align: center;
+    }
+
+    .login-btm a {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-2"></div>
+      <div class="col-lg-6 col-md-8 login-box">
+        <div class="col-lg-12 text-center">
+          <img src="assets/img/logo/logo.png" alt="Logo" style="width: 150px; height: 150px;">
+        </div>
+        <div class="col-lg-12 login-title">
+          ADMIN PANEL
+        </div>
+        <% if(msg) { %>
+        <h3 style="color: #007bff;" class="text-center"><%=msg%></h3><br>
+        <%   } %>
+        <% if(err) { %>
+        <h3 style="color: #ff304f;" class="text-center"><%=err%></h3><br>
+        <%   } %>
+
+        <div class="col-lg-12 login-form">
+          <div class="col-lg-12 login-form">
+            <form action="/admin/" method="POST">
+              <div class="form-group">
+                <label class="form-control-label" style="color: #007bff;">USERNAME</label>
+                <input name="name" type="text" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" style="color: #007bff;">PASSWORD</label>
+                <input name="pass" type="password" class="form-control" required>
+              </div>
+
+              <div class="col-lg-12 login-button">
+                <button type="submit" class="btn btn-primary">LOGIN</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-2"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
